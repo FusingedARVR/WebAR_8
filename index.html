@@ -157,7 +157,7 @@
           streamingAssetsUrl: "StreamingAssets",
           companyName: "Fusing_Education",
           productName: "WebAR_8_Ps72x",
-          productVersion: "0.2.34",
+          productVersion: "0.2.35",
           showBanner: unityShowBanner,
         };
         // By default Unity keeps WebGL canvas render target size matched with
@@ -166,6 +166,9 @@
         // happening inside the engine, and you would instead like to size up
         // the canvas DOM size and WebGL render target sizes yourself.
         // config.matchWebGLToCanvasSize = false;
+        // P0 rendimiento (universal): cada dispositivo conserva el 40 % de sus pixeles nativos,
+        // sea iPhone, Android, iPad o escritorio. Sin deteccion de dispositivo ni valores por modelo.
+        config.devicePixelRatio = (window.devicePixelRatio || 1) * 0.7746;
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
           // Mobile device style: fill the whole browser client area with the game canvas:
           var meta = document.createElement('meta');
